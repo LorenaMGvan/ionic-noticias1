@@ -38,8 +38,8 @@ export class NewsService {
     //       map( ({ articles }) => articles )
     //   );   
   }
-  
 
+  
   getTopHeadlinesByCategory( category: string, loadMore: boolean = false):Observable<Article[]> {
 
     if( loadMore ) {
@@ -86,18 +86,5 @@ export class NewsService {
       );
 
   }
-
-  // getTopHeadlinesOld(): Observable<Article[]> {
-  //   // https://newsapi.org/v2/everything?q=tesla&from=2021-12-19&sortBy=publishedAt
-  //   return this.http.get<NewsResponse>(`https://newsapi.org/v2/everything?q=tesla&from=2021-12-19&sortBy=publishedAt`, {
-  //     params: {
-  //       apiKey //  a partir de ecmacscript6 se puede omitit esto "apiKey:apiKey", si se llaman igual
-  //     }
-  //   }).pipe( //  transforma la salida, mas nop la data
-  //     map(({ articles }) => articles)
-  //     // map(resp => resp.articles)
-  //   );    
-  // }
-
 
 }
