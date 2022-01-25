@@ -13,20 +13,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-segment 
-      scrollable
-      mode="ios"
-      value="{{selectedCategory}}" 
-      (ionChange)="segmentChanged($event)">
-
-    <ion-segment-button
-        *ngFor="let category of categories" 
-        value="category">
-      <ion-label class="ion-text-capitalize">{{ category }}</ion-label>
-    </ion-segment-button>
-    
-    
+<ion-toolbar  color="primary">
+  <ion-segment  scrollable mode="ios" value="{{selectedCategory}}" (ionChange)="segmentChanged($event)">
+    <ion-segment-button color="secondary" *ngFor="let category of categories" value="{{ category }}">
+      <ion-label class="ion-text-capitalize">{{ category.label }}</ion-label>
+      <ion-icon name="{{ category.icon }}"></ion-icon>
+    </ion-segment-button>        
   </ion-segment>
+</ion-toolbar>
 
   <app-articles
     [articles]="articles">
@@ -42,5 +36,6 @@
       loadingText="Cargando..">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+
 
 </ion-content>

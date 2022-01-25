@@ -27,3 +27,9 @@ export interface ArticlesByCategoryAndPage {
     articles: Article[]
   }
 }
+
+
+export interface EtiquetasCategory { 
+  label: string,
+  icon: string
+}
